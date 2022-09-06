@@ -15,7 +15,7 @@ class AppWidget extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp.router(
           title: 'Cuida Pet',
-          debugShowCheckedModeBanner: true,
+          debugShowCheckedModeBanner: false,
           builder: Asuka.builder,
           theme: ThemeData(),
           routeInformationParser: Modular.routeInformationParser,
