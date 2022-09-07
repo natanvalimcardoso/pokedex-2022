@@ -10,7 +10,7 @@ class AuthModule extends Module {
   final List<ModularRoute> routes = [
     ChildRoute(
       Modular.initialRoute,
-      child: (_, __) => const AuthHomePage(),
+      child: (_, __) => AuthHomePage(authStore: Modular.get() ,),
     ),
   ];
 }

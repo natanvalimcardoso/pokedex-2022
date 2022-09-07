@@ -1,3 +1,4 @@
+import 'package:cuida_pet/app/modules/core/core_module.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import 'modules/auth/auth_module.dart';
@@ -7,7 +8,13 @@ class AppModule extends Module {
   List<Bind> get binds => [];
 
   @override
-  List<ModularRoute> get routes => [
-        ModuleRoute('/auth', module: AuthModule())
+  //* (CoreModule) Aqui vai ficar os imports das binds que serão usadas no modulo
+  //* Todos binds que nos setarmos dentro dele serão importados para nossa aplicação como um todo.
+  //* Sem eu ter a necessidade de sujar todo o meu appModule com bando de classes que fica jogado no meio do código
+  List<Module> get imports => [
+        CoreModule(),
       ];
+
+  @override
+  List<ModularRoute> get routes => [ModuleRoute('/auth', module: AuthModule())];
 }
