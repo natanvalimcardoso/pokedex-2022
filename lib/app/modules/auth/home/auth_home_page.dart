@@ -1,5 +1,5 @@
+import 'package:cuida_pet/app/core/ui/extensions/size_screen_extension.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AuthHomePage extends StatelessWidget {
   const AuthHomePage({Key? key}) : super(key: key);
