@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "cuida_pet",
+            "name": "pokedex-2022",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "cuida_pet (profile mode)",
+            "name": "pokedex-2022 (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "cuida_pet (release mode)",
+            "name": "pokedex-2022 (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

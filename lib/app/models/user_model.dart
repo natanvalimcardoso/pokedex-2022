@@ -7,13 +7,18 @@ class UserModel {
   final String email;
   final String registerType;
   final String imgAvatar;
-  
+
   UserModel({
     required this.email,
     required this.registerType,
     required this.imgAvatar,
   });
 
+  //  pra quando um usuário não está logado
+  UserModel.empty()
+      : email = '',
+        registerType = '',
+        imgAvatar = '';
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -25,13 +30,13 @@ class UserModel {
 
   factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
-      email: map['email'] as String,
-      registerType: map['registerType'] as String,
-      imgAvatar: map['imgAvatar'] as String,
+      email: map['email'] ?? '',
+      registerType: map['registerType'] ?? '',
+      imgAvatar: map['imgAvatar'] ?? '',
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory UserModel.fromJson(String source) => UserModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory UserModel.fromJson(String source) => UserModel.fromMap(json.decode(source));
 }

@@ -1,6 +1,6 @@
 {
-    "name": "cuida_pet",
-    "short_name": "cuida_pet",
+    "name": "pokedex-2022t",
+    "short_name": "pokedex-2022t",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

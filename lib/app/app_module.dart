@@ -1,7 +1,6 @@
-import 'package:cuida_pet/app/modules/core/core_module.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
-import 'modules/auth/auth_module.dart';
+import 'package:pokedex_2022/app/modules/core/core_module.dart';
+import 'package:pokedex_2022/app/modules/home/home_module.dart';
 
 class AppModule extends Module {
   @override
@@ -16,5 +15,8 @@ class AppModule extends Module {
       ];
 
   @override
-  List<ModularRoute> get routes => [ModuleRoute('/auth', module: AuthModule())];
+  List<ModularRoute> get routes => [
+        // ModuleRoute('/auth', module: AuthModule()),
+        ModuleRoute('/home', module: HomeModule()),
+      ];
 }

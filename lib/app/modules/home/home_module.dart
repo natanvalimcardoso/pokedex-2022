@@ -1,5 +1,6 @@
-import 'package:cuida_pet/app/modules/home/home_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+
+import 'page/home_page.dart';
 
 class HomeModule extends Module {
 

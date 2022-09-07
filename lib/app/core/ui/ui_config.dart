@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class UiConfig {
   UiConfig._(); //é uma constante e não pode ser instanciada por isso o construtor privado, somente atributos de classe
 
-  static String get title => 'Cuida pet';
+  static String get title => 'pokedex-2022';
 
   static ThemeData get theme => ThemeData(
         primaryColor: const Color(0xffA8CE4B),
