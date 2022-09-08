@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import 'core/ui/ui_config.dart';
+import '../core/utils/theme/ui_config.dart';
+
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
