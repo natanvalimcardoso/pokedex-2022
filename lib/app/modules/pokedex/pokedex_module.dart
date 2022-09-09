@@ -4,6 +4,6 @@ import './pokedex_page.dart';
 class PokedexModule extends Module {
   @override
   final List<ModularRoute> routes = [
-    ChildRoute('/', child: (_, args) => const PokedexPage()),
+    ChildRoute(Modular.initialRoute, child: (_, args) => const PokedexPage()),
   ];
 }

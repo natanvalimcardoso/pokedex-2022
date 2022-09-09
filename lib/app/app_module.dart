@@ -7,9 +7,6 @@ class AppModule extends Module {
   List<Bind> get binds => [];
 
   @override
-  //* (CoreModule) Aqui vai ficar os imports das binds que serão usadas no modulo
-  //* Todos binds que nos setarmos dentro dele serão importados para nossa aplicação como um todo.
-  //* Sem eu ter a necessidade de sujar todo o meu appModule com bando de classes que fica jogado no meio do código
   List<Module> get imports => [];
 
   @override
