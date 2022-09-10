@@ -3,10 +3,17 @@
 
 abstract class IGetAllPokemonUsecase {
   // Future<List<FailurePokedex, List<Pokemon>>> call(); EXEMPLO, COLCOAR either(dartz)
+  teste(){
 
+  }
 }
 
 class GetAllPokemonUsecase implements IGetAllPokemonUsecase {
+  @override
+  teste() {
+    // TODO: implement teste
+    throw UnimplementedError();
+  }
   //@OVERRIDE
   // Future<List<FailurePokedex, List<Pokemon>>> call(); EXEMPLO, COLCOAR either(dartz)
 }
