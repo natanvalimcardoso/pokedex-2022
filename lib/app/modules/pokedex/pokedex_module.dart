@@ -1,5 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'pages/pokedex_page.dart';
+
+import 'presentation/pages/pokedex_page.dart';
 
 class PokedexModule extends Module {
   @override
