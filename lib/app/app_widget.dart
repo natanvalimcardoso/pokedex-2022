@@ -9,7 +9,6 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Modular.setInitialRoute('/auth');
-//continuar amanyha
     return MaterialApp.router(
       title: UiConfig.title,
       debugShowCheckedModeBanner: false,
