@@ -1,19 +1,22 @@
 // As usecases são responsáveis por fazer a ponte entre a camada de domínio e a camada de infraestrutura (data)
 // Ela é a implementação da regra de negócio
+import 'package:pokedex_2022/app/modules/pokedex/domain/model/pokemon_model.dart';
+
+import '../repositories/pokedex_repository.dart';
 
 abstract class IGetAllPokemonUsecase {
-  // Future<List<FailurePokedex, List<Pokemon>>> call(); EXEMPLO, COLCOAR either(dartz)
-  teste(){
-
-  }
+  Future<List<PokemonModel>> call();
 }
 
-class GetAllPokemonUsecase implements IGetAllPokemonUsecase {
+class GetAllPokemonUsecaseImp implements IGetAllPokemonUsecase{
+
+  final PokedexRepository repository;
+
   @override
-  teste() {
-    // TODO: implement teste
-    throw UnimplementedError();
+  Future<List<PokemonModel>> call() {
+      
   }
-  //@OVERRIDE
-  // Future<List<FailurePokedex, List<Pokemon>>> call(); EXEMPLO, COLCOAR either(dartz)
+      
+
 }
+
