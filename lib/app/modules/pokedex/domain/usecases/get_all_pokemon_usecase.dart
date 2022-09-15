@@ -10,11 +10,11 @@ abstract class IGetAllPokemonUsecase {
 
 class GetAllPokemonUsecaseImp implements IGetAllPokemonUsecase{
 
-  final PokedexRepository repository;
+  late final PokedexRepository repository;
 
   @override
   Future<List<PokemonModel>> call() {
-      
+    return repository.getAllPokemon();
   }
       
 
