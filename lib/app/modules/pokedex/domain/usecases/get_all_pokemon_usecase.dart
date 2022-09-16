@@ -8,15 +8,13 @@ abstract class IGetAllPokemonUsecase {
   Future<List<PokemonModel>> call();
 }
 
-class GetAllPokemonUsecaseImp implements IGetAllPokemonUsecase{
+class GetAllPokemonUsecaseImp implements IGetAllPokemonUsecase {
+  const GetAllPokemonUsecaseImp(this.repository);
 
-  late final PokedexRepository repository;
+  final PokedexRepository repository;
 
   @override
   Future<List<PokemonModel>> call() {
     return repository.getAllPokemon();
   }
-      
-
 }
-

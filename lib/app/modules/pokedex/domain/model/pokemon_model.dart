@@ -3,13 +3,13 @@ import 'dart:convert';
 
 class PokemonModel {
   final int id;
-  final String number;
+  final String name;
   final String img;
   final String num;
 
   PokemonModel({
     required this.id,
-    required this.number,
+    required this.name,
     required this.img,
     required this.num,
   });
@@ -17,7 +17,7 @@ class PokemonModel {
   Map<String, dynamic> toMap() {
     return {
       'id': id,
-      'number': number,
+      'name': name,
       'img': img,
       'num': num,
     };
@@ -26,7 +26,7 @@ class PokemonModel {
   factory PokemonModel.fromMap(Map<String, dynamic> map) {
     return PokemonModel(
       id: map['id'] ?? 0,
-      number: map['number'] ?? '',
+      name: map['name'] ?? '',
       img: map['img'] ?? '',
       num: map['num'] ?? '',
     );
@@ -38,6 +38,6 @@ class PokemonModel {
 
   @override
   String toString() {
-    return 'PokemonModel(id: $id, number: $number, img: $img, num: $num)';
+    return 'PokemonModel(id: $id, name: $name, img: $img, num: $num)';
   }
 }
