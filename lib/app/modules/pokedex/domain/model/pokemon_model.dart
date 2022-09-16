@@ -15,7 +15,7 @@ class PokemonModel {
   });
 
   Map<String, dynamic> toMap() {
-    return {
+    return <String, dynamic>{
       'id': id,
       'name': name,
       'img': img,

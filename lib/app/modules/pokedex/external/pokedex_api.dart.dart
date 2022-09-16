@@ -12,11 +12,9 @@ class PokedexApi implements PokedexDatasource {
     final response = await https.get(Uri.parse(ApiPokemonConst.allPokemonsURL));
 
     try {
-      var pokemonList = jsonDecode(response.body);
-
-      return pokemonList.map<PokemonModel>((alunoMap) {
-        return PokemonModel.fromMap(alunoMap);
-      }).toList();
+      final json = jsonDecode(response.body) as Map<String, dynamic>;
+      final listPokemon = json['pokemon'] as List<dynamic>;
+      return listPokemon.map((pokemon) => PokemonModel.fromMap(pokemon)).toList();
     } catch (e) {
       return throw ('Erro ao carregar lista de pokemons');
     }

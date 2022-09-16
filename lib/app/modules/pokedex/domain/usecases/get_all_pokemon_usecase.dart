@@ -14,7 +14,7 @@ class GetAllPokemonUsecaseImp implements IGetAllPokemonUsecase {
   final PokedexRepository repository;
 
   @override
-  Future<List<PokemonModel>> call() {
+  Future<List<PokemonModel>> call() async {
     return repository.getAllPokemon();
   }
 }

@@ -4,13 +4,16 @@ import 'package:pokedex_2022/app/modules/pokedex/infra/datasource/pokedex_dataso
 import '../../domain/repositories/pokedex_repository.dart';
 
 class PokedexRepositoryImp implements PokedexRepository {
-
   final PokedexDatasource datasource;
 
   PokedexRepositoryImp(this.datasource);
 
   @override
   Future<List<PokemonModel>> getAllPokemon() {
-    return datasource.getAllPokemon();
+    try {
+      return datasource.getAllPokemon();
+    } catch (e) {
+      return throw ('Erro ao carregar lista de pokemons');
+    }
   }
 }

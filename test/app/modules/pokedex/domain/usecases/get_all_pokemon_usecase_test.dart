@@ -15,6 +15,11 @@ void main() {
     expect(result[0].num, '001');
     expect(result[0].name, 'Bulbasaur');
   });
+
+  // test('Deve dar erro quando não retornar a lista de pokemon', () async {
+  //   final result = usecase();
+  //   expect(() async => await result, throwsA(isA<String>()));
+  // });
 }
 
 class PokedexRepositoryMock implements PokedexRepository {
