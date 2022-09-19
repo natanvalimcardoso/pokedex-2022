@@ -5,28 +5,27 @@ abstract class PokedexState extends Equatable {
   const PokedexState();
 
   @override
-  List<Object> get props => []; // pra indicar que houve mudanca nas propriedades do estado 
+  List<Object> get props => []; // pra indicar que houve mudanca nas propriedades
 }
 
-class PokedexInitial extends PokedexState {
-  const PokedexInitial();
+class PokedexInitialState extends PokedexState {
+  const PokedexInitialState();
 }
 
-class PokedexLoading extends PokedexState {
-  const PokedexLoading();
+class PokedexLoadingState extends PokedexState {
+  const PokedexLoadingState();
 }
 
-class PokedexLoaded extends PokedexState {
+class PokedexLoadedState extends PokedexState {
   final List<PokemonModel> pokemons;
-  const PokedexLoaded({required this.pokemons});
+  const PokedexLoadedState({required this.pokemons});
 
   @override
-  List<Object> get props => [pokemons]; 
+  List<Object> get props => [pokemons];
 }
 
-class PokedexError extends PokedexState {
+class PokedexErrorState extends PokedexState {
   final String errorMessage;
 
-  const PokedexError(this.errorMessage);
-  
+  const PokedexErrorState(this.errorMessage);
 }

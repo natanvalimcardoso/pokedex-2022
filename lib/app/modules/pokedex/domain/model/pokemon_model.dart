@@ -32,6 +32,9 @@ class PokemonModel {
     );
   }
 
+  String get image =>
+      'https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/$num.png';
+
   String toJson() => jsonEncode(toMap());
 
   factory PokemonModel.fromJson(String json) => PokemonModel.fromMap(jsonDecode(json));

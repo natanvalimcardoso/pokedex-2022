@@ -20,3 +20,8 @@ class PokedexApi implements PokedexDatasource {
     }
   }
 }
+
+main(){
+  final  pokedexApi = PokedexApi();
+  print(pokedexApi.getAllPokemon());
+}

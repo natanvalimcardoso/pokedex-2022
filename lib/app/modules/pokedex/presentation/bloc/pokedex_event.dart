@@ -7,6 +7,6 @@ abstract class PokedexEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class LoadingPokedexEvent extends PokedexEvent {
-  const LoadingPokedexEvent();
+class GetPokedexEvent extends PokedexEvent {
+  const GetPokedexEvent();
 }
