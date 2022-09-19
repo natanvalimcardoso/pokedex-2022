@@ -3,10 +3,9 @@ import 'package:pokedex_2022/app/modules/pokedex/infra/repositories/pokedex_repo
 
 import 'external/pokedex_api.dart.dart';
 
-void main(List<String> args) {
+Future<void> main(List<String> args) async {
   final usecase = GetAllPokemonUsecaseImp(PokedexRepositoryImp(PokedexApi()));
-
-  print(usecase.repository.getAllPokemon());
-  // printar só os nome dos pokemons
-  print(usecase.repository.getAllPokemon().then((value) => value.map((e) => e.name)));
+  final result = await usecase.repository.getAllPokemon();
+  print(result[13].img);
+  print(result[13].name);
 }
