@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex_2022/app/modules/home/widgets/button_home_widget.dart';
 
 import '../widgets/text_home_widgets.dart';
 
@@ -31,12 +32,13 @@ class HomePage extends StatelessWidget {
                     titleOne: 'Pokedex',
                     titleTwo: 'Natan Valim Cardoso',
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/pokedex');
-                    },
-                    child: const Text('Pokedex'),
-                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: size.height * 0.4),
+                    child: ButtonHomeWidget(
+                      onTap: () {},
+                      title: 'Entrar',
+                    ),
+                  )
                 ],
               ),
             ),
