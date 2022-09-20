@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex_2022/app/modules/home/widgets/button_home_widget.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:pokedex_2022/app/modules/home/presentation/widgets/button_home_widget.dart';
+import 'package:pokedex_2022/core/consts/route_constants.dart';
 
 import '../widgets/text_home_widgets.dart';
 
@@ -35,7 +37,10 @@ class HomePage extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(top: size.height * 0.4),
                     child: ButtonHomeWidget(
-                      onTap: () {},
+                      onTap: () {
+                        //navegar com modular
+                        Modular.to.pushNamed(RouteConstants.pokedex);
+                      },
                       title: 'Entrar',
                     ),
                   )
