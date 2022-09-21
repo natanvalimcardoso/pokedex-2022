@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pokedex_2022/core/utils/theme/theme_color.dart';
 
 class ButtonHomeWidget extends StatelessWidget {
   final Function() onTap;
@@ -16,8 +17,8 @@ class ButtonHomeWidget extends StatelessWidget {
       height: size.height * 0.06,
       child: ElevatedButton(
         onPressed: onTap,
-        style:  ButtonStyle(
-          backgroundColor:  MaterialStateProperty.all<Color>(const Color(0xFFCC0001)),
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(ThemeColor.primaryRed),
         ),
         child: Text(
           title.toUpperCase(),

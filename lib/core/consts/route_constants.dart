@@ -1,5 +1,5 @@
 class RouteConstants {
-  static const initial = '/';
-  static const home = '/home';
-  static const pokedex = '/pokedex';
+  //* --------------- Modulos -------------------- *//
+  static const homeModule = '/homeModule';
+  static const pokedexModule = '/pokedexModule';
 }

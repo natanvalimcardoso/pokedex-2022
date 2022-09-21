@@ -1,5 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:pokedex_2022/app/modules/pokedex/pokedex_module.dart';
+import 'package:pokedex_2022/core/consts/route_constants.dart';
 
 import 'modules/home/home_module.dart';
 
@@ -13,11 +14,11 @@ class AppModule extends Module {
   @override
   List<ModularRoute> get routes => [
         ModuleRoute(
-          '/home',
+          RouteConstants.homeModule,
           module: HomeModule(),
         ),
         ModuleRoute(
-          '/pokedex',
+          RouteConstants.pokedexModule,
           module: PokedexModule(),
         ),
       ];
