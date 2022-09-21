@@ -38,7 +38,6 @@ class HomePage extends StatelessWidget {
                     padding: EdgeInsets.only(top: size.height * 0.4),
                     child: ButtonHomeWidget(
                       onTap: () {
-                        //navegar com modular
                         Modular.to.pushNamed(RouteConstants.pokedex);
                       },
                       title: 'Entrar',
