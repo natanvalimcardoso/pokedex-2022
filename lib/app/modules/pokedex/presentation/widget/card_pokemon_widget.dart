@@ -10,7 +10,7 @@ class CardPokemonWidget extends StatelessWidget {
     return Card(
       elevation: 2,
       child: Center(
-        child: Container(
+        child: SizedBox(
           width: size.width * 0.28,
           child: Image.network(image),
         ),

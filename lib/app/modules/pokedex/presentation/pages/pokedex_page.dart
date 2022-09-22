@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex_2022/app/modules/pokedex/presentation/bloc/pokedex_bloc.dart';
 
+import '../bloc/pokedex_event.dart';
 import '../widget/card_pokemon_widget.dart';
 import '../widget/header_widget.dart';
 
 class PokedexPage extends StatelessWidget {
   PokedexPage({Key? key}) : super(key: key);
   List pokemons = [];
+  final bloc = PokedexBloc().add(const GetPokedexEvent());
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,9 @@ class PokedexPage extends StatelessWidget {
                   childAspectRatio: 1.4,
                 ),
                 itemBuilder: (BuildContext context, int index) {
-                  return  const CardPokemonWidget(image: '',);
+                  return const CardPokemonWidget(
+                    image: 'https://www.serebii.net/pokemongo/pokemon/001.png',
+                  );
                 },
               ),
             ),
