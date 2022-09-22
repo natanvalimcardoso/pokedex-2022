@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:pokedex_2022/core/utils/theme/theme_color.dart';
 
+import '../widget/card_pokemon_widget.dart';
 import '../widget/header_widget.dart';
 
 class PokedexPage extends StatelessWidget {
@@ -18,12 +17,24 @@ class PokedexPage extends StatelessWidget {
             title: 'Pokedex',
           ),
           Padding(
-            padding:EdgeInsets.only(top: size.height * 0.03),
+            padding: EdgeInsets.only(
+              top: size.height * 0.03,
+              left: size.width * 0.04,
+              right: size.width * 0.04,
+            ),
             child: SizedBox(
               height: size.height * 0.8,
               width: double.infinity,
-              
-              // child: ListView.builder(itemBuilder: itemBuilder)
+              child: GridView.builder(
+                itemCount: 2,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 1.4,
+                ),
+                itemBuilder: (BuildContext context, int index) {
+                  return  const CardPokemonWidget(image: '',);
+                },
+              ),
             ),
           )
         ],
