@@ -24,3 +24,15 @@ class PokedexBloc extends Bloc<PokedexEvent, PokedexState> {
     }
   }
 }
+
+main(){
+  // // retornando o valor bloc
+  // final bloc = PokedexBloc();
+  // bloc.add(const GetPokedexEvent());
+  // bloc.listen((state) {
+  //   if(state is PokedexLoadedState){
+  //     print(state.pokemons);
+  //   }
+  // });
+
+}
