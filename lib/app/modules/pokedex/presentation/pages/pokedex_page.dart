@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/pokedex_bloc.dart';
 import '../bloc/pokedex_event.dart';
 import '../bloc/pokedex_state.dart';
-import '../widget/bloc_alerts_widgets/new_error_widget.dart.dart';
 import '../widget/bloc_alerts_widgets/new_loading_widget.dart';
 import '../widget/card_pokemon_widget.dart';
 import '../widget/header_widget.dart';
@@ -33,6 +32,7 @@ class _PokedexPageState extends State<PokedexPage> {
           BlocBuilder<PokedexBloc, PokedexState>(
             bloc: bloc,
             builder: (context, state) {
+
               if (state is PokedexLoadingState) {
                 return const Center(
                   child: NewLoadingWidget(),
@@ -68,7 +68,10 @@ class _PokedexPageState extends State<PokedexPage> {
               }
 
               if (state is PokedexErrorState) {
-                return NewErrorWidgetDart(message: state.errorMessage,);
+                return const Center(
+                  child: Text('ERROR')
+                );
+                // return NewErrorWidgetDart(message: state.errorMessage,);
               }
 
               return const SizedBox();
