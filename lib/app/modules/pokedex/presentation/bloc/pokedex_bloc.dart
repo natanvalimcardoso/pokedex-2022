@@ -18,6 +18,8 @@ class PokedexBloc extends Bloc<PokedexEvent, PokedexState> {
     emit(const PokedexLoadingState());
     try {
       final pokemons = await getPokemonsUsecase.call();
+      // fake error
+       throw Exception('Error');
       emit(PokedexLoadedState(pokemons: pokemons));
     } catch (error) {
       emit(PokedexErrorState(error.toString()));
@@ -25,14 +27,3 @@ class PokedexBloc extends Bloc<PokedexEvent, PokedexState> {
   }
 }
 
-main(){
-  // // retornando o valor bloc
-  // final bloc = PokedexBloc();
-  // bloc.add(const GetPokedexEvent());
-  // bloc.listen((state) {
-  //   if(state is PokedexLoadedState){
-  //     print(state.pokemons);
-  //   }
-  // });
-
-}
