@@ -12,11 +12,12 @@ class PokedexBloc extends Bloc<PokedexEvent, PokedexState> {
   }
 
   Future<void> _onShowAllPokemon(event, emit) async {
-
     final getPokemonsUsecase = GetAllPokemonUsecaseImp(PokedexRepositoryImp(PokedexApi()));
 
     emit(const PokedexLoadingState());
     try {
+      throw Exception('Erro no servidor');
+
       final pokemons = await getPokemonsUsecase.call();
       emit(PokedexLoadedState(pokemons: pokemons));
     } catch (error) {
@@ -24,4 +25,3 @@ class PokedexBloc extends Bloc<PokedexEvent, PokedexState> {
     }
   }
 }
-
