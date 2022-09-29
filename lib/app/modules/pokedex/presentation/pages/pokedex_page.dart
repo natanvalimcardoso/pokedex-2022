@@ -35,9 +35,13 @@ class _PokedexPageState extends State<PokedexPage> {
             bloc: bloc,
             builder: (context, state) {
               if (state is PokedexErrorState) {
-                return NewErrorWidget(
-                  message: state.errorMessage,
-                  title: 'Erro na Pokedex',
+                return Expanded(
+                  child: Center(
+                    child: NewErrorWidget(
+                      message: state.errorMessage,
+                      title: 'Erro na Pokedex',
+                    ),
+                  ),
                 );
               }
               if (state is PokedexLoadingState) {

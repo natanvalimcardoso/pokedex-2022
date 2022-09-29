@@ -17,10 +17,10 @@ class PokedexBloc extends Bloc<PokedexEvent, PokedexState> {
     emit(const PokedexLoadingState());
     try {
       final pokemons = await getPokemonsUsecase.call();
-      throw Exception();
+      // throw Exception();
       emit(PokedexLoadedState(pokemons: pokemons));
     } catch (error) {
-      emit(PokedexErrorState(error.toString()));
+      emit(PokedexErrorState('Erro ao carregar a pokedex: ${error.toString()}'));
     }
   }
 }
