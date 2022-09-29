@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:pokedex_2022/app/modules/pokedex/domain/model/pokemon_model.dart';
 
 import '../bloc/pokedex_bloc.dart';
 import '../bloc/pokedex_event.dart';
@@ -9,6 +9,7 @@ import '../widget/bloc_alerts_widgets/new_error_widget.dart';
 import '../widget/bloc_alerts_widgets/new_loading_widget.dart';
 import '../widget/card_pokemon_widget.dart';
 import '../widget/header_widget.dart';
+import '../widget/textfield_pokemon_widgte.dart';
 
 class PokedexPage extends StatefulWidget {
   const PokedexPage({Key? key}) : super(key: key);
@@ -18,9 +19,8 @@ class PokedexPage extends StatefulWidget {
 }
 
 class _PokedexPageState extends State<PokedexPage> {
+  final controllerTextField = TextEditingController();
   final bloc = PokedexBloc()..add(const GetPokedexEvent());
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +30,12 @@ class _PokedexPageState extends State<PokedexPage> {
         children: [
           const HeaderWidget(
             title: 'Pokedex',
+          ),
+          TextfieldPokemonWidgte(
+            onChanged: (_) {
+                      setState(() {});
+                    },
+            controllerTextField: controllerTextField,
           ),
           BlocBuilder<PokedexBloc, PokedexState>(
             bloc: bloc,
@@ -51,31 +57,45 @@ class _PokedexPageState extends State<PokedexPage> {
               }
 
               if (state is PokedexLoadedState) {
-                return Padding(
-                  padding: EdgeInsets.only(
-                    top: size.height * 0.03,
-                    left: size.width * 0.04,
-                    right: size.width * 0.04,
-                  ),
-                  child: SizedBox(
-                    height: size.height * 0.8,
-                    width: double.infinity,
-                    child: GridView.builder(
-                      itemCount: state.pokemons.length,
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        childAspectRatio: 1.4,
-                      ),
-                      itemBuilder: (BuildContext context, int index) {
-                        return CardPokemonWidget(
-                          image: state.pokemons[index].image,
-                          namePokemon: state.pokemons[index].name,
-                          numPokemon: state.pokemons[index].num,
-                        );
-                      },
-                    ),
-                  ),
-                );
+                List<PokemonModel> filteredPokemonList = state.pokemons
+                    .where((pokemons) => pokemons.name.toLowerCase().startsWith(
+                          controllerTextField.text.toLowerCase(),
+                        ))
+                    .toList();
+
+                return filteredPokemonList.isNotEmpty
+                    ? Padding(
+                        padding: EdgeInsets.only(
+                          top: size.height * 0.02,
+                          left: size.width * 0.04,
+                          right: size.width * 0.04,
+                          bottom: size.height * 0.02,
+                        ),
+                        child: SizedBox(
+                          height: size.height * 0.72,
+                          width: double.infinity,
+                          child: GridView.builder(
+                            itemCount:
+                                filteredPokemonList.length, //Sem pesquisa: state.pokemons.length,
+                            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              childAspectRatio: 1.4,
+                            ),
+                            itemBuilder: (BuildContext context, int index) {
+                              return CardPokemonWidget(
+                                image: filteredPokemonList[index].image, //Sem pesquisa: state.pokemons[index].image,
+                                namePokemon: filteredPokemonList[index].name, //Sem pesquisa: state.pokemons[index].name,
+                                numPokemon: filteredPokemonList[index].num, //Sem pesquisa: state.pokemons[index].num,
+                              );
+                            },
+                          ),
+                        ),
+                      )
+                    : const Expanded(
+                        child: Center(
+                          child: Text('Nenhum pokemon encontrado'),
+                        ),
+                      );
               }
               return const SizedBox();
             },

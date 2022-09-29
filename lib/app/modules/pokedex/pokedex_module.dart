@@ -6,7 +6,7 @@ class PokedexModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute(
           Modular.initialRoute,
-          child: (_, args) =>  PokedexPage(),
+          child: (_, args) =>  const PokedexPage(),
         ),
       ];
 }

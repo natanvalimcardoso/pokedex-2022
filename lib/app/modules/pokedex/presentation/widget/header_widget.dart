@@ -12,7 +12,7 @@ class HeaderWidget extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Container(
       width: double.infinity,
-      height: size.height * 0.14,
+      height: size.height * 0.13,
       decoration: const BoxDecoration(
           color: ThemeColor.primaryRed,
           borderRadius: BorderRadius.only(
