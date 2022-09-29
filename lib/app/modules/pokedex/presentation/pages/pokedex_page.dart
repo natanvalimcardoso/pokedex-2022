@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokedex_2022/app/modules/pokedex/domain/model/pokemon_model.dart';
 
+import '../../domain/model/pokemon_model.dart';
 import '../bloc/pokedex_bloc.dart';
 import '../bloc/pokedex_event.dart';
 import '../bloc/pokedex_state.dart';
@@ -9,6 +9,7 @@ import '../widget/bloc_alerts_widgets/new_error_widget.dart';
 import '../widget/bloc_alerts_widgets/new_loading_widget.dart';
 import '../widget/card_pokemon_widget.dart';
 import '../widget/header_widget.dart';
+import '../widget/nothing_found_widget.dart';
 import '../widget/textfield_pokemon_widgte.dart';
 
 class PokedexPage extends StatefulWidget {
@@ -33,8 +34,8 @@ class _PokedexPageState extends State<PokedexPage> {
           ),
           TextfieldPokemonWidgte(
             onChanged: (_) {
-                      setState(() {});
-                    },
+              setState(() {});
+            },
             controllerTextField: controllerTextField,
           ),
           BlocBuilder<PokedexBloc, PokedexState>(
@@ -83,19 +84,15 @@ class _PokedexPageState extends State<PokedexPage> {
                             ),
                             itemBuilder: (BuildContext context, int index) {
                               return CardPokemonWidget(
-                                image: filteredPokemonList[index].image, //Sem pesquisa: state.pokemons[index].image,
-                                namePokemon: filteredPokemonList[index].name, //Sem pesquisa: state.pokemons[index].name,
-                                numPokemon: filteredPokemonList[index].num, //Sem pesquisa: state.pokemons[index].num,
+                                image: filteredPokemonList[index].image,
+                                namePokemon: filteredPokemonList[index].name,
+                                numPokemon: filteredPokemonList[index].num,
                               );
                             },
                           ),
                         ),
                       )
-                    : const Expanded(
-                        child: Center(
-                          child: Text('Nenhum pokemon encontrado'),
-                        ),
-                      );
+                    : const NothingFoundWidget();
               }
               return const SizedBox();
             },

@@ -85,6 +85,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.6"
+  elliptic_text:
+    dependency: "direct main"
+    description:
+      name: elliptic_text
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1+9"
   equatable:
     dependency: "direct main"
     description:
