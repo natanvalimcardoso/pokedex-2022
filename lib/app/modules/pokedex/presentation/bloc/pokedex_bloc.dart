@@ -16,9 +16,8 @@ class PokedexBloc extends Bloc<PokedexEvent, PokedexState> {
 
     emit(const PokedexLoadingState());
     try {
-      throw Exception('Erro no servidor');
-
       final pokemons = await getPokemonsUsecase.call();
+      throw Exception();
       emit(PokedexLoadedState(pokemons: pokemons));
     } catch (error) {
       emit(PokedexErrorState(error.toString()));

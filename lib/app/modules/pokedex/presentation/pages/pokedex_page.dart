@@ -5,6 +5,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import '../bloc/pokedex_bloc.dart';
 import '../bloc/pokedex_event.dart';
 import '../bloc/pokedex_state.dart';
+import '../widget/bloc_alerts_widgets/new_error_widget.dart';
 import '../widget/bloc_alerts_widgets/new_loading_widget.dart';
 import '../widget/card_pokemon_widget.dart';
 import '../widget/header_widget.dart';
@@ -19,25 +20,7 @@ class PokedexPage extends StatefulWidget {
 class _PokedexPageState extends State<PokedexPage> {
   final bloc = PokedexBloc()..add(const GetPokedexEvent());
 
-  Future<dynamic> _returnErrorDialog(String message, BuildContext context) {
-    return  showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return SimpleDialog(
-          title: const Text('Erro na Pokedex'),
-          children: <Widget>[
-            Center(child: Text(message)),
-            TextButton(
-              onPressed: () {
-                Modular.to.pop();
-              },
-              child: const Text('Ok'),
-            ),
-          ],
-        );
-      },
-    );
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -48,52 +31,50 @@ class _PokedexPageState extends State<PokedexPage> {
           const HeaderWidget(
             title: 'Pokedex',
           ),
-          BlocListener<PokedexBloc, PokedexState>(
+          BlocBuilder<PokedexBloc, PokedexState>(
             bloc: bloc,
-            listener: (context, state) {
+            builder: (context, state) {
               if (state is PokedexErrorState) {
-                _returnErrorDialog(state.errorMessage, context);
+                return NewErrorWidget(
+                  message: state.errorMessage,
+                  title: 'Erro na Pokedex',
+                );
               }
-            },
-            child: BlocBuilder<PokedexBloc, PokedexState>(
-              bloc: bloc,
-              builder: (context, state) {
-                if (state is PokedexLoadingState) {
-                  return const Center(
-                    child: NewLoadingWidget(),
-                  );
-                }
+              if (state is PokedexLoadingState) {
+                return const Center(
+                  child: NewLoadingWidget(),
+                );
+              }
 
-                if (state is PokedexLoadedState) {
-                  return Padding(
-                    padding: EdgeInsets.only(
-                      top: size.height * 0.03,
-                      left: size.width * 0.04,
-                      right: size.width * 0.04,
-                    ),
-                    child: SizedBox(
-                      height: size.height * 0.8,
-                      width: double.infinity,
-                      child: GridView.builder(
-                        itemCount: state.pokemons.length,
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          childAspectRatio: 1.4,
-                        ),
-                        itemBuilder: (BuildContext context, int index) {
-                          return CardPokemonWidget(
-                            image: state.pokemons[index].image,
-                            namePokemon: state.pokemons[index].name,
-                            numPokemon: state.pokemons[index].num,
-                          );
-                        },
+              if (state is PokedexLoadedState) {
+                return Padding(
+                  padding: EdgeInsets.only(
+                    top: size.height * 0.03,
+                    left: size.width * 0.04,
+                    right: size.width * 0.04,
+                  ),
+                  child: SizedBox(
+                    height: size.height * 0.8,
+                    width: double.infinity,
+                    child: GridView.builder(
+                      itemCount: state.pokemons.length,
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        childAspectRatio: 1.4,
                       ),
+                      itemBuilder: (BuildContext context, int index) {
+                        return CardPokemonWidget(
+                          image: state.pokemons[index].image,
+                          namePokemon: state.pokemons[index].name,
+                          numPokemon: state.pokemons[index].num,
+                        );
+                      },
                     ),
-                  );
-                }
-                return const SizedBox();
-              },
-            ),
+                  ),
+                );
+              }
+              return const SizedBox();
+            },
           )
         ],
       ),
