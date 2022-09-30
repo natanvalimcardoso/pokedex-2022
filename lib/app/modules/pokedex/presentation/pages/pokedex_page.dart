@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../../../../core/consts/route_constants.dart';
 import '../../domain/model/pokemon_model.dart';
 import '../bloc/pokedex_bloc.dart';
 import '../bloc/pokedex_event.dart';
 import '../bloc/pokedex_state.dart';
 import '../widget/bloc_alerts_widgets/new_error_widget.dart';
 import '../widget/bloc_alerts_widgets/new_loading_widget.dart';
-import '../widget/card_pokemon_widget.dart';
-import '../widget/header_widget.dart';
-import '../widget/nothing_found_widget.dart';
-import '../widget/textfield_pokemon_widgte.dart';
+import '../widget/pokedex_main/card_pokemon_widget.dart';
+import '../widget/pokedex_main/header_widget.dart';
+import '../widget/pokedex_main/nothing_found_widget.dart';
+import '../widget/pokedex_main/textfield_pokemon_widgte.dart';
 
 class PokedexPage extends StatefulWidget {
   const PokedexPage({Key? key}) : super(key: key);
@@ -21,7 +23,10 @@ class PokedexPage extends StatefulWidget {
 
 class _PokedexPageState extends State<PokedexPage> {
   final controllerTextField = TextEditingController();
-  final bloc = PokedexBloc()..add(const GetPokedexEvent(),);
+  final bloc = PokedexBloc()
+    ..add(
+      const GetPokedexEvent(),
+    );
 
   @override
   Widget build(BuildContext context) {
@@ -87,6 +92,11 @@ class _PokedexPageState extends State<PokedexPage> {
                                 image: filteredPokemonList[index].image,
                                 namePokemon: filteredPokemonList[index].name,
                                 numPokemon: filteredPokemonList[index].num,
+                                onTap: () => Modular.to.pushNamed(
+                                  RouteConstants.pokedexModule +
+                                      RouteConstants.pokedexAboutPokemonPage,
+                                  arguments: state.pokemons[index],
+                                ),
                               );
                             },
                           ),

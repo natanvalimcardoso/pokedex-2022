@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-
-import '../../../../../core/consts/route_constants.dart';
+import 'package:pokedex_2022/core/utils/theme/theme_color.dart';
 
 class CardPokemonWidget extends StatelessWidget {
   final String image;
   final String namePokemon;
   final String numPokemon;
+  final Function()? onTap;
   const CardPokemonWidget(
-      {Key? key, required this.image, required this.namePokemon, required this.numPokemon})
+      {Key? key,
+      required this.image,
+      required this.namePokemon,
+      required this.numPokemon,
+      required this.onTap})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return InkWell(
-      onTap: () => Modular.to.pushNamed(
-        RouteConstants.pokedexModule+
-        RouteConstants.pokedexAboutPokemonPage,
-      ),
+      splashColor: ThemeColor.lightRed,
+      highlightColor: ThemeColor.lightRed,
+      onTap: onTap,
       child: Ink(
         height: size.height * 0.3,
         child: Card(
