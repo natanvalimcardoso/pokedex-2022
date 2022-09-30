@@ -21,7 +21,7 @@ class PokedexPage extends StatefulWidget {
 
 class _PokedexPageState extends State<PokedexPage> {
   final controllerTextField = TextEditingController();
-  final bloc = PokedexBloc()..add(const GetPokedexEvent());
+  final bloc = PokedexBloc()..add(const GetPokedexEvent(),);
 
   @override
   Widget build(BuildContext context) {
