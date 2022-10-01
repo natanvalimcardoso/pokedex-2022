@@ -36,6 +36,7 @@ class PokedexAboutPokemonPage extends StatelessWidget {
                 left: (size.width * (0.375 - (0.15 * 2))),
               ),
               itemBuilder: (context, index) {
+                //TODO - Implementar a lógica dAS CORES ETC, arrumar widget
               return TypeContainerWidget(
                 typeName: pokemon.type[index],
                 typeColorLight: pokemon.baseColor!,
