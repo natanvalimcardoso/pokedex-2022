@@ -12,7 +12,9 @@ class PokedexModule extends Module {
         ),
         ChildRoute(
           RouteConstants.pokedexAboutPokemonPage,
-          child: (_, args) => const PokedexAboutPokemonPage(),
+          child: (_, args) => PokedexAboutPokemonPage(
+            pokemon: args.data,
+          ),
         ),
       ];
 }

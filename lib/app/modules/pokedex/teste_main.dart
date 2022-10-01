@@ -10,4 +10,5 @@ Future<void> main(List<String> args) async {
   final result = await usecase.repository.getAllPokemon();
   print(result[13].img);
   print(result[13].name);
+  print(result[2].type[1]);// Testar
 }

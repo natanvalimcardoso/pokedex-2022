@@ -95,7 +95,12 @@ class _PokedexPageState extends State<PokedexPage> {
                                 onTap: () => Modular.to.pushNamed(
                                   RouteConstants.pokedexModule +
                                       RouteConstants.pokedexAboutPokemonPage,
-                                  arguments: state.pokemons[index],
+                                  arguments: PokemonModel(
+                                    name: filteredPokemonList[index].name,
+                                    img: filteredPokemonList[index].image,
+                                    num: filteredPokemonList[index].num,
+                                    type: filteredPokemonList[index].type,
+                                  ),
                                 ),
                               );
                             },

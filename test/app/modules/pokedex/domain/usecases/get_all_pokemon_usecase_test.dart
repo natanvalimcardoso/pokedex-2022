@@ -10,10 +10,10 @@ void main() {
   test('Deve retornar uma lista de PokemonModel', () async {
     final result = await usecase();
     expect(result, isA<List<PokemonModel>>());
-    expect(result[0].id, 1);
     expect(result[0].img, 'http://www.serebii.net/pokemongo/pokemon/001.png');
     expect(result[0].num, '001');
     expect(result[0].name, 'Bulbasaur');
+    expect(result[0].type, ['Grass', 'Poison']);
   });
 
   // test('Deve dar erro quando não retornar a lista de pokemon', () async {
@@ -27,10 +27,10 @@ class PokedexRepositoryMock implements PokedexRepository {
   Future<List<PokemonModel>> getAllPokemon() async {
     return [
       PokemonModel(
-        id: 1,
         img: 'http://www.serebii.net/pokemongo/pokemon/001.png',
         num: '001',
         name: 'Bulbasaur',
+        type:  ['Grass', 'Poison'],
       ),
     ];
   }

@@ -8,11 +8,13 @@ class HeaderAboutPokemonWidget extends StatelessWidget {
   final String image;
   final String name;
   final String number;
+  final Color? color;
   const HeaderAboutPokemonWidget({
     Key? key,
     required this.image,
     required this.name,
     required this.number,
+    this.color,
   }) : super(key: key);
 
   @override
@@ -23,10 +25,10 @@ class HeaderAboutPokemonWidget extends StatelessWidget {
         Container(
           height: size.height * 0.4,
           width: double.infinity,
-          decoration: const BoxDecoration(
-            color: ThemeColor.lightGray,
+          decoration:  BoxDecoration(
+            color: color,
             shape: BoxShape.rectangle,
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(200),
               bottomRight: Radius.circular(200),
             ),
@@ -63,12 +65,15 @@ class HeaderAboutPokemonWidget extends StatelessWidget {
                           style: ThemeText.titleOne,
                         ),
                         Text(
-                          name,
+                          number,
                           style: ThemeText.subtitleOne,
+                        ),
+                        SizedBox(
+                          height: size.height * 0.05,
                         ),
                         Image.network(
                           image,
-                          height: size.height * 0.3,
+                          height: size.height * 0.25,
                         ),
                       ],
                     ),
