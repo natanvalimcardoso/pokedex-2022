@@ -30,11 +30,5 @@ class ThemeText {
     color: Colors.white,
     letterSpacing: 1.5,
   );
-  static  TextStyle miniTitleOneWhite = GoogleFonts.fredokaOne(
-    fontSize: 16,
-    height: 1.41,
-    fontWeight: FontWeight.w500,
-    color: Colors.white,
-    letterSpacing: 2,
-  );
+ 
 }

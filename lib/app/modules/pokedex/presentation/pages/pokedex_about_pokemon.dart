@@ -28,20 +28,19 @@ class PokedexAboutPokemonPage extends StatelessWidget {
           ),
           SizedBox(
             width: double.infinity,
-            height: size.height * 0.2,
+            height: size.height * 0.25,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: 3,
+              itemCount: pokemon.type.length,
               padding: EdgeInsets.only(
-                left: (size.width * (0.375 - (0.15 * 2))),
+                left: (size.width * (0.375 - (0.15 * (pokemon.type.length - 1)))),
               ),
               itemBuilder: (context, index) {
-                //TODO - Implementar a lógica dAS CORES ETC, arrumar widget
               return TypeContainerWidget(
                 typeName: pokemon.type[index],
                 typeColorLight: pokemon.baseColor!,
-                typeColorDark: pokemon.baseColor!,
-                typeImage: pokemon.type[index],
+                typeColorDark: pokemon.baseColorDark! ,
+                typeImage: pokemon.imageType![index],
               );
               },
             ),

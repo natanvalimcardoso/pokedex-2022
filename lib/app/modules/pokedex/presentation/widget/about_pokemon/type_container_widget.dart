@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../../../core/utils/theme/theme_font.dart';
 
@@ -23,6 +24,7 @@ class TypeContainerWidget extends StatelessWidget {
       height: size.height * 0.1,
       padding: EdgeInsets.only(
         right: size.width * 0.05,
+        top: size.height * 0.02,
       ),
       child: Stack(
         children: [
@@ -34,7 +36,7 @@ class TypeContainerWidget extends StatelessWidget {
               height: size.height * 0.16,
               width: size.width * 0.25,
               decoration: BoxDecoration(
-                // color: typeColorDark[800], 
+                color: typeColorDark,
                 borderRadius: BorderRadius.circular(30),
               ),
             ),
@@ -50,16 +52,25 @@ class TypeContainerWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(25),
                 color: typeColorLight,
               ),
-              child: Text(
-                typeName,
-                style: ThemeText.miniTitleOneWhite,
+              child: SizedBox(
+                child: Text(
+                  typeName,
+                  style: GoogleFonts.fredokaOne(
+                    height: 1.41,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white,
+                    letterSpacing: 2,
+                    //responsivo
+                    fontSize: size.width * 0.031,
+                  ),
+                ),
               ),
             ),
           ),
           Align(
-            alignment: Alignment.center,
+            alignment: Alignment.topCenter,
             child: Padding(
-              padding: EdgeInsets.only(top: size.height * 0.02),
+              padding: EdgeInsets.only(top: size.height * 0.06),
               child: Image.asset(
                 typeImage,
                 height: size.height * 0.1,

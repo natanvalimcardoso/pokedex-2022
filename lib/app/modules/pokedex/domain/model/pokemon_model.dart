@@ -39,7 +39,6 @@ class PokemonModel {
 
   Color? get baseColor => _color(type: type[0]);
 
-  String? get imageType => _typeImage(type: type[0]);
 
   String toJson() => jsonEncode(toMap());
 
@@ -92,45 +91,154 @@ class PokemonModel {
         return Colors.grey;
     }
   }
+  Color? get baseColorDark => _colorDark(type: type[0]);
 
-  static String? _typeImage({required String type}) {
+  static Color? _colorDark({required String type}) {
     switch (type) {
       case 'Normal':
-        return 'assets/types/normal.png';
+        return Colors.brown[800];
       case 'Fire':
-        return 'assets/types/fire.png';
+        return Colors.red[800];
       case 'Water':
-        return 'assets/types/water.png';
+        return Colors.blue[800];
       case 'Grass':
-        return 'assets/types/grass.png';
+        return Colors.green[800];
       case 'Electric':
-        return 'assets/types/electric.png';
+        return Colors.amber[800];
       case 'Ice':
-        return 'assets/types/ice.png';
+        return Colors.cyanAccent[900];
       case 'Fighting':
-        return 'assets/types/fighting.png';
+        return Colors.orange[800];
       case 'Poison':
-        return 'assets/types/poison.png';
+        return Colors.purple[800];
       case 'Ground':
-        return 'assets/types/ground.png';
+        return Colors.orange[500];
       case 'Flying':
-        return 'assets/types/flying.png';
+        return Colors.indigo[900];
       case 'Psychic':
-        return 'assets/types/psychic.png';
+        return Colors.pink[800];
       case 'Bug':
-        return 'assets/types/bug.png';
+        return Colors.lightGreen[900];
       case 'Rock':
-        return 'assets/types/rock.png';
+        return Colors.grey[800];
       case 'Ghost':
-        return 'assets/types/ghost.png';
+        return Colors.indigo[900];
       case 'Dark':
-        return 'assets/types/dark.png';
+        return Colors.brown[800];
       case 'Dragon':
-        return 'assets/types/dragon.png';
+        return Colors.indigo[900];
       case 'Steel':
-        return 'assets/types/steel.png';
+        return Colors.blueGrey[800];
       case 'Fairy':
-        return 'assets/types/fairy.png';
+        return Colors.pinkAccent[800];
+      default:
+        return Colors.grey[800];
     }
+  }
+
+  List<String>? get imageType => _typeImage(types: type);
+
+  static List<String>? _typeImage({required List<String?> types}) {
+    final List<String> list = [];
+    for (var type in types) {
+      switch (type) {
+        case 'Normal':
+          {
+            list.add('assets/types/normal.png');
+            break;
+          }
+        case 'Fire':
+          {
+            list.add('assets/types/fire.png');
+            break;
+          }
+        case 'Water':
+          {
+            list.add('assets/types/water.png');
+            break;
+          }
+        case 'Grass':
+          {
+            list.add('assets/types/grass.png');
+            break;
+          }
+        case 'Electric':
+          {
+            list.add('assets/types/electric.png');
+            break;
+          }
+        case 'Ice':
+          {
+            list.add('assets/types/ice.png');
+            break;
+          }
+        case 'Fighting':
+          {
+            list.add('assets/types/fighting.png');
+            break;
+          }
+        case 'Poison':
+          {
+            list.add('assets/types/poison.png');
+            break;
+          }
+        case 'Ground':
+          {
+            list.add('assets/types/ground.png');
+            break;
+          }
+        case 'Flying':
+          {
+            list.add('assets/types/flying.png');
+            break;
+          }
+        case 'Psychic':
+          {
+            list.add('assets/types/psychic.png');
+            break;
+          }
+        case 'Bug':
+          {
+            list.add('assets/types/bug.png');
+            break;
+          }
+        case 'Rock':
+          {
+            list.add('assets/types/rock.png');
+            break;
+          }
+        case 'Ghost':
+          {
+            list.add('assets/types/ghost.png');
+            break;
+          }
+        case 'Dark':
+          {
+            list.add('assets/types/dark.png');
+            break;
+          }
+        case 'Dragon':
+          {
+            list.add('assets/types/dragon.png');
+            break;
+          }
+        case 'Steel':
+          {
+            list.add('assets/types/steel.png');
+            break;
+          }
+        case 'Fairy':
+          {
+            list.add('assets/types/fairy.png');
+            break;
+          }
+        default:
+          {
+            list.add('assets/types/normal.png');
+            break;
+          }
+      }
+    }
+    return list;
   }
 }
