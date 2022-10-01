@@ -96,7 +96,7 @@ class PokemonModel {
   static Color? _colorDark({required String type}) {
     switch (type) {
       case 'Normal':
-        return Colors.brown[800];
+        return Colors.brown[600];
       case 'Fire':
         return Colors.red[800];
       case 'Water':
