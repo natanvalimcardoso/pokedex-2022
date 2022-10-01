@@ -28,5 +28,7 @@ class ThemeText {
     height: 1.41,
     fontWeight: FontWeight.w400,
     color: Colors.white,
+    //espaço entre as letras
+    letterSpacing: 1.5,
   );
 }

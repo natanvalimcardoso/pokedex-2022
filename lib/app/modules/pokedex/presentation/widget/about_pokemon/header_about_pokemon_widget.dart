@@ -25,7 +25,7 @@ class HeaderAboutPokemonWidget extends StatelessWidget {
         Container(
           height: size.height * 0.4,
           width: double.infinity,
-          decoration:  BoxDecoration(
+          decoration: BoxDecoration(
             color: color,
             shape: BoxShape.rectangle,
             borderRadius: const BorderRadius.only(
@@ -64,9 +64,20 @@ class HeaderAboutPokemonWidget extends StatelessWidget {
                           name,
                           style: ThemeText.titleOneWhite,
                         ),
-                        Text(
-                          number,
-                          style: ThemeText.subtitleOneWhite,
+                        SizedBox(
+                          height: size.height * 0.01,
+                        ),
+                        Container(
+                          width: size.width * 0.18,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(108, 121, 121, 121),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Text(
+                            "#$number",
+                            style: ThemeText.subtitleOneWhite,
+                          ),
                         ),
                         SizedBox(
                           height: size.height * 0.05,

@@ -39,6 +39,8 @@ class PokemonModel {
 
   Color? get baseColor => _color(type: type[0]);
 
+  String? get imageType => _typeImage(type: type[0]);
+
   String toJson() => jsonEncode(toMap());
 
   factory PokemonModel.fromJson(String json) => PokemonModel.fromMap(jsonDecode(json));
@@ -88,6 +90,47 @@ class PokemonModel {
         return Colors.pinkAccent[100];
       default:
         return Colors.grey;
+    }
+  }
+
+  static String? _typeImage({required String type}) {
+    switch (type) {
+      case 'Normal':
+        return 'assets/types/normal.png';
+      case 'Fire':
+        return 'assets/types/fire.png';
+      case 'Water':
+        return 'assets/types/water.png';
+      case 'Grass':
+        return 'assets/types/grass.png';
+      case 'Electric':
+        return 'assets/types/electric.png';
+      case 'Ice':
+        return 'assets/types/ice.png';
+      case 'Fighting':
+        return 'assets/types/fighting.png';
+      case 'Poison':
+        return 'assets/types/poison.png';
+      case 'Ground':
+        return 'assets/types/ground.png';
+      case 'Flying':
+        return 'assets/types/flying.png';
+      case 'Psychic':
+        return 'assets/types/psychic.png';
+      case 'Bug':
+        return 'assets/types/bug.png';
+      case 'Rock':
+        return 'assets/types/rock.png';
+      case 'Ghost':
+        return 'assets/types/ghost.png';
+      case 'Dark':
+        return 'assets/types/dark.png';
+      case 'Dragon':
+        return 'assets/types/dragon.png';
+      case 'Steel':
+        return 'assets/types/steel.png';
+      case 'Fairy':
+        return 'assets/types/fairy.png';
     }
   }
 }

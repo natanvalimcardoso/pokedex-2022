@@ -78,7 +78,25 @@ flutter:
     - assets/images/ic_launcher.png
     - assets/animations/error.json
     - assets/animations/nothing_found.json
-
+    - assets/types/bug.png
+    - assets/types/dark.png
+    - assets/types/dragon.png
+    - assets/types/electric.png
+    - assets/types/fairy.png
+    - assets/types/fighting.png
+    - assets/types/fire.png
+    - assets/types/flying.png
+    - assets/types/ghost.png
+    - assets/types/grass.png
+    - assets/types/ground.png
+    - assets/types/ice.png
+    - assets/types/normal_la.png
+    - assets/types/normal.png
+    - assets/types/poison.png
+    - assets/types/psychic.png
+    - assets/types/rock.png
+    - assets/types/steel.png
+    - assets/types/water.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -22,22 +22,20 @@ class PokedexAboutPokemonPage extends StatelessWidget {
             number: pokemon.num,
             color: pokemon.baseColor,
           ),
-          Column(
-            children: [
-              Text(
-                pokemon.type[0],
-              ),
-              Container(height: 20, width: 20, color: pokemon.baseColor)
-            ],
+          SizedBox(
+            width: size.width * 0.9,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  pokemon.type[0],
+                ),
+                Image.asset(pokemon.imageType!),
+              ],
+            ),
           ),
         ],
       ),
     );
   }
 }
-
-// color(List<String> list) {
-//   for (var element in list) {
-//     print(element);
-//   }
-// }

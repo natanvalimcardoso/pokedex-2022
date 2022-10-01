@@ -47,7 +47,7 @@ class CardPokemonWidget extends StatelessWidget {
                 height: size.height * 0.01,
               ),
               Text(
-                numPokemon,
+                '#$numPokemon',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.grey[600],
