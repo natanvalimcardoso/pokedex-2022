@@ -20,10 +20,15 @@ class PokedexAboutPokemonPage extends StatelessWidget {
             image: pokemon.image,
             name: pokemon.name,
             number: pokemon.num,
-            color: Colors.grey,
+            color: pokemon.baseColor,
           ),
           Column(
-            children: [Text(color(pokemon.type))],
+            children: [
+              Text(
+                pokemon.type[0],
+              ),
+              Container(height: 20, width: 20, color: pokemon.baseColor)
+            ],
           ),
         ],
       ),
@@ -31,8 +36,8 @@ class PokedexAboutPokemonPage extends StatelessWidget {
   }
 }
 
-color(List<String> list) {
-  for (var element in list) {
-    print(element);
-  }
-}
+// color(List<String> list) {
+//   for (var element in list) {
+//     print(element);
+//   }
+// }

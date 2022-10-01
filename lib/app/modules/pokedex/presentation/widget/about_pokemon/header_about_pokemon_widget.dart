@@ -51,7 +51,7 @@ class HeaderAboutPokemonWidget extends StatelessWidget {
                       },
                       icon: const Icon(
                         Icons.arrow_back_ios,
-                        color: ThemeColor.darkGray,
+                        color: Colors.white,
                         size: 30,
                       ),
                     ),
@@ -62,11 +62,11 @@ class HeaderAboutPokemonWidget extends StatelessWidget {
                       children: [
                         Text(
                           name,
-                          style: ThemeText.titleOne,
+                          style: ThemeText.titleOneWhite,
                         ),
                         Text(
                           number,
-                          style: ThemeText.subtitleOne,
+                          style: ThemeText.subtitleOneWhite,
                         ),
                         SizedBox(
                           height: size.height * 0.05,
