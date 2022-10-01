@@ -28,7 +28,13 @@ class ThemeText {
     height: 1.41,
     fontWeight: FontWeight.w400,
     color: Colors.white,
-    //espaço entre as letras
     letterSpacing: 1.5,
+  );
+  static  TextStyle miniTitleOneWhite = GoogleFonts.fredokaOne(
+    fontSize: 16,
+    height: 1.41,
+    fontWeight: FontWeight.w500,
+    color: Colors.white,
+    letterSpacing: 2,
   );
 }

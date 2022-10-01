@@ -71,7 +71,7 @@ class HeaderAboutPokemonWidget extends StatelessWidget {
                           width: size.width * 0.18,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                            color: const Color.fromARGB(108, 121, 121, 121),
+                            color: ThemeColor.grayWithOpacity,
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Text(
