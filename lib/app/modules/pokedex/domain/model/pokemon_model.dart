@@ -39,7 +39,6 @@ class PokemonModel {
 
   Color? get baseColor => _color(type: type[0]);
 
-
   String toJson() => jsonEncode(toMap());
 
   factory PokemonModel.fromJson(String json) => PokemonModel.fromMap(jsonDecode(json));
@@ -91,54 +90,126 @@ class PokemonModel {
         return Colors.grey;
     }
   }
-  Color? get baseColorDark => _colorDark(type: type[0]);
 
-  static Color? _colorDark({required String type}) {
-    switch (type) {
-      case 'Normal':
-        return Colors.brown[600];
-      case 'Fire':
-        return Colors.red[800];
-      case 'Water':
-        return Colors.blue[800];
-      case 'Grass':
-        return Colors.green[800];
-      case 'Electric':
-        return Colors.amber[800];
-      case 'Ice':
-        return Colors.cyanAccent[900];
-      case 'Fighting':
-        return Colors.orange[800];
-      case 'Poison':
-        return Colors.purple[800];
-      case 'Ground':
-        return Colors.orange[500];
-      case 'Flying':
-        return Colors.indigo[900];
-      case 'Psychic':
-        return Colors.pink[800];
-      case 'Bug':
-        return Colors.lightGreen[900];
-      case 'Rock':
-        return Colors.grey[800];
-      case 'Ghost':
-        return Colors.indigo[900];
-      case 'Dark':
-        return Colors.brown[800];
-      case 'Dragon':
-        return Colors.indigo[900];
-      case 'Steel':
-        return Colors.blueGrey[800];
-      case 'Fairy':
-        return Colors.pinkAccent[800];
-      default:
-        return Colors.grey[800];
+  List<Color>? get baseColorDark => _colorDark(types: type);
+
+  static List<Color>? _colorDark({required List<String> types}) {
+    final List<Color?> list = [];
+    for (var type in types) {
+      switch (type) {
+        case 'Normal':
+          {
+            list.add(Colors.brown[600]);
+            break;
+          }
+
+        case 'Fire':
+          {
+            list.add(Colors.red[800]);
+            break;
+          }
+        case 'Water':
+          {
+            list.add(Colors.blue[800]);
+            break;
+          }
+        case 'Grass':
+          {
+            list.add(Colors.green[800]);
+            break;
+          }
+        case 'Electric':
+          {
+            list.add(Colors.amber[800]);
+            break;
+          }
+        case 'Ice':
+          {
+            list.add(Colors.cyanAccent[900]);
+            break;
+          }
+        case 'Fighting':
+          {
+            list.add(Colors.orange[800]);
+            break;
+          }
+
+        case 'Poison':
+          {
+            list.add(Colors.purple[800]);
+            break;
+          }
+
+        case 'Ground':
+          {
+            list.add(Colors.orange[500]);
+            break;
+          }
+
+        case 'Flying':
+          {
+            list.add(Colors.indigo[900]);
+            break;
+          }
+        case 'Psychic':
+          {
+            list.add(Colors.pink[800]);
+            break;
+          }
+
+        case 'Bug':
+          {
+            list.add(Colors.lightGreen[900]);
+            break;
+          }
+
+        case 'Rock':
+          {
+            list.add(Colors.grey[800]);
+            break;
+          }
+
+        case 'Ghost':
+          {
+            list.add(Colors.indigo[900]);
+            break;
+          }
+
+        case 'Dark':
+          {
+            list.add(Colors.brown[800]);
+            break;
+          }
+
+        case 'Dragon':
+          {
+            list.add(Colors.indigo[900]);
+            break;
+          }
+        case 'Steel':
+          {
+            list.add(Colors.blueGrey[800]);
+            break;
+          }
+        case 'Fairy':
+          {
+            list.add(Colors.pinkAccent[800]);
+            break;
+          }
+        default:
+          {
+            list.add(Colors.grey[800]);
+            break;
+          }
+      }
     }
+      return list as List<Color>?;
+
   }
 
   List<String>? get imageType => _typeImage(types: type);
 
-  static List<String>? _typeImage({required List<String?> types}) {
+  static List<String>? _typeImage({required List<String> types}) {
     final List<String> list = [];
     for (var type in types) {
       switch (type) {
