@@ -91,10 +91,10 @@ class PokemonModel {
     }
   }
 
-  List<Color>? get baseColorDark => _colorDark(types: type);
+  List<Color> get baseColorDark => _colorDark(types: type);
 
-  static List<Color>? _colorDark({required List<String> types}) {
-    final List<Color?> list = [];
+  static List<Color> _colorDark({required List<String> types}) {
+    final List<Color?> list = []; 
     for (var type in types) {
       switch (type) {
         case 'Normal':
@@ -162,7 +162,7 @@ class PokemonModel {
             list.add(Colors.lightGreen[900]);
             break;
           }
-
+          
         case 'Rock':
           {
             list.add(Colors.grey[800]);
@@ -203,8 +203,122 @@ class PokemonModel {
           }
       }
     }
-      return list as List<Color>?;
+      return list.cast<Color>();
+  }
 
+  List<Color> get baseColorLightList => _colorLightList(types: type);
+
+  static List<Color> _colorLightList({required List<String> types}) {
+    final List<Color?> list = []; 
+    for (var type in types) {
+      switch (type) {
+        case 'Normal':
+          {
+            list.add(Colors.brown[00]);
+            break;
+          }
+
+        case 'Fire':
+          {
+            list.add(Colors.red);
+            break;
+          }
+        case 'Water':
+          {
+            list.add(Colors.blue);
+            break;
+          }
+        case 'Grass':
+          {
+            list.add(Colors.green);
+            break;
+          }
+        case 'Electric':
+          {
+            list.add(Colors.amber);
+            break;
+          }
+        case 'Ice':
+          {
+            list.add(Colors.cyanAccent[400]);
+            break;
+          }
+        case 'Fighting':
+          {
+            list.add(Colors.orange);
+            break;
+          }
+
+        case 'Poison':
+          {
+            list.add(Colors.purple);
+            break;
+          }
+
+        case 'Ground':
+          {
+            list.add(Colors.orange[300]);
+            break;
+          }
+
+        case 'Flying':
+          {
+            list.add(Colors.indigo[200]);
+            break;
+          }
+        case 'Psychic':
+          {
+            list.add(Colors.pink);
+            break;
+          }
+
+        case 'Bug':
+          {
+            list.add(Colors.lightGreen[500]);
+            break;
+          }
+          
+        case 'Rock':
+          {
+            list.add(Colors.grey);
+            break;
+          }
+
+        case 'Ghost':
+          {
+            list.add(Colors.indigo[400]);
+            break;
+          }
+
+        case 'Dark':
+          {
+            list.add(Colors.brown);
+            break;
+          }
+
+        case 'Dragon':
+          {
+            list.add(Colors.indigo[800]);
+            break;
+          }
+        case 'Steel':
+          {
+            list.add(Colors.blueGrey);
+            break;
+          }
+        case 'Fairy':
+          {
+            list.add(Colors.pinkAccent[100]);
+            break;
+          }
+        default:
+          {
+            list.add(Colors.grey);
+            break;
+          }
+      }
+    }
+      return list.cast<Color>();
   }
 
   List<String>? get imageType => _typeImage(types: type);

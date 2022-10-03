@@ -38,8 +38,8 @@ class PokedexAboutPokemonPage extends StatelessWidget {
               itemBuilder: (context, index) {
               return TypeContainerWidget(
                 typeName: pokemon.type[index],
-                typeColorLight: pokemon.baseColor!,
-                typeColorDark: pokemon.baseColorDark![index] ,
+                typeColorLight: pokemon.baseColorLightList[index],
+                typeColorDark: pokemon.baseColorDark[index] ,
                 typeImage: pokemon.imageType![index],
               );
               },
