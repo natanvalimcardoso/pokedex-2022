@@ -1,9 +1,6 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:pokedex_2022/app/modules/pokedex/domain/model/pokemon_model.dart';
-import 'package:pokedex_2022/core/utils/theme/theme_color.dart';
-import 'package:pokedex_2022/core/utils/theme/theme_font.dart';
 
+import '../../domain/model/pokemon_model.dart';
 import '../widget/about_pokemon/header_about_pokemon_widget.dart';
 import '../widget/about_pokemon/type_container_widget.dart';
 
@@ -36,12 +33,12 @@ class PokedexAboutPokemonPage extends StatelessWidget {
                 left: (size.width * (0.375 - (0.15 * (pokemon.type.length - 1)))),
               ),
               itemBuilder: (context, index) {
-              return TypeContainerWidget(
-                typeName: pokemon.type[index],
-                typeColorLight: pokemon.baseColorLightList[index],
-                typeColorDark: pokemon.baseColorDark[index] ,
-                typeImage: pokemon.imageType![index],
-              );
+                return TypeContainerWidget(
+                  typeName: pokemon.type[index],
+                  typeColorLight: pokemon.baseColorLightList[index],
+                  typeColorDark: pokemon.baseColorDark[index],
+                  typeImage: pokemon.imageType![index],
+                );
               },
             ),
           ),

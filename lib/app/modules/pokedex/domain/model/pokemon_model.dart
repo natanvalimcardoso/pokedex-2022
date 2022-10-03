@@ -61,7 +61,7 @@ class PokemonModel {
       case 'Electric':
         return Colors.amber;
       case 'Ice':
-        return Colors.cyanAccent[400];
+        return Colors.cyan[400];
       case 'Fighting':
         return Colors.orange;
       case 'Poison':
@@ -125,7 +125,7 @@ class PokemonModel {
           }
         case 'Ice':
           {
-            list.add(Colors.cyanAccent[900]);
+            list.add(Colors.cyan[800]);
             break;
           }
         case 'Fighting':
@@ -214,7 +214,7 @@ class PokemonModel {
       switch (type) {
         case 'Normal':
           {
-            list.add(Colors.brown[00]);
+            list.add(Colors.brown[400]);
             break;
           }
 
@@ -240,7 +240,7 @@ class PokemonModel {
           }
         case 'Ice':
           {
-            list.add(Colors.cyanAccent[400]);
+            list.add(Colors.cyan[400]);
             break;
           }
         case 'Fighting':
