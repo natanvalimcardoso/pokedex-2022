@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../../../core/utils/theme/theme_font.dart';
-
 class TypeContainerWidget extends StatelessWidget {
   final String typeName;
   final Color typeColorLight;

@@ -4,6 +4,7 @@ import 'package:pokedex_2022/core/utils/theme/theme_color.dart';
 
 import '../../domain/model/pokemon_model.dart';
 import '../widget/about_pokemon/header_about_pokemon_widget.dart';
+import '../widget/about_pokemon/text_with_icon_widget.dart';
 import '../widget/about_pokemon/type_container_widget.dart';
 
 class PokedexAboutPokemonPage extends StatelessWidget {
@@ -31,7 +32,7 @@ class PokedexAboutPokemonPage extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: pokemon.type.length,
               padding: EdgeInsets.only(
-                left: (size.width * (0.375 - (0.15 * (pokemon.type.length - 1)))),
+                left: (size.width * (0.350 - (0.15 * (pokemon.type.length - 1)))),
               ),
               itemBuilder: (context, index) {
                 return TypeContainerWidget(
@@ -43,7 +44,26 @@ class PokedexAboutPokemonPage extends StatelessWidget {
               },
             ),
           ),
-         
+          SizedBox(
+            width: double.infinity,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextWithIconWidget(
+                  color: pokemon.baseColor,
+                  text: 'Height',
+                  textPokemon: pokemon.height,
+                  icon: Icons.height,
+                ),
+                TextWithIconWidget(
+                  color: pokemon.baseColor,
+                  text: 'Weight',
+                  textPokemon: pokemon.weight,
+                  icon: Icons.fitness_center_sharp,
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

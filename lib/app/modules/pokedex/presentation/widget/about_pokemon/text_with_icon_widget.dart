@@ -7,7 +7,7 @@ class TextWithIconWidget extends StatelessWidget {
   final String text;
   final String textPokemon;
   final IconData icon;
-  final Color color;
+  final Color? color;
 
   const TextWithIconWidget({
     Key? key,
@@ -23,7 +23,7 @@ class TextWithIconWidget extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          width: size.width * 0.3,
+          width: size.width * 0.24,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -36,7 +36,7 @@ class TextWithIconWidget extends StatelessWidget {
                     ),
                     child: Icon(
                       icon,
-                      size: size.width * 0.08,
+                      size: size.width * 0.05,
                       color: color,
                     ),
                   ),
