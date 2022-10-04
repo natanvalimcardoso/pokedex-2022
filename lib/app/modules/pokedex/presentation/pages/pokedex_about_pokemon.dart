@@ -24,7 +24,6 @@ class PokedexAboutPokemonPage extends StatelessWidget {
             color: pokemon.baseColor,
           ),
           SizedBox(
-            width: double.infinity,
             height: size.height * 0.25,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
@@ -41,6 +40,27 @@ class PokedexAboutPokemonPage extends StatelessWidget {
                 );
               },
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Column(
+                children: [
+                  Icon(
+                    Icons.height,
+                    color: pokemon.baseColor,
+                  ),
+                  Text(
+                    'Height: ${pokemon.height}',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+             
+            ],
           ),
         ],
       ),

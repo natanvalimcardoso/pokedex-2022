@@ -20,10 +20,9 @@ class TypeContainerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      width: size.width * 0.3,
+      width: size.width * 0.30,
       height: size.height * 0.1,
       padding: EdgeInsets.only(
-        right: size.width * 0.05,
         top: size.height * 0.02,
       ),
       child: Stack(
@@ -32,12 +31,15 @@ class TypeContainerWidget extends StatelessWidget {
             padding: EdgeInsets.only(
               top: size.height * 0.02,
             ),
-            child: Container(
-              height: size.height * 0.16,
-              width: size.width * 0.25,
-              decoration: BoxDecoration(
-                color: typeColorDark,
-                borderRadius: BorderRadius.circular(30),
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: Container(
+                height: size.height * 0.16,
+                width: size.width * 0.25,
+                decoration: BoxDecoration(
+                  color: typeColorDark,
+                  borderRadius: BorderRadius.circular(30),
+                ),
               ),
             ),
           ),
@@ -52,17 +54,15 @@ class TypeContainerWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(25),
                 color: typeColorLight,
               ),
-              child: SizedBox(
-                child: Text(
-                  typeName,
-                  style: GoogleFonts.fredokaOne(
-                    height: 1.41,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
-                    letterSpacing: 2,
-                    //responsivo
-                    fontSize: size.width * 0.031,
-                  ),
+              child: Text(
+                typeName,
+                style: GoogleFonts.fredokaOne(
+                  height: 1.41,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+                  letterSpacing: 2,
+                  //responsivo
+                  fontSize: size.width * 0.031,
                 ),
               ),
             ),

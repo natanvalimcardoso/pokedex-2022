@@ -100,6 +100,8 @@ class _PokedexPageState extends State<PokedexPage> {
                                     img: filteredPokemonList[index].image,
                                     num: filteredPokemonList[index].num,
                                     type: filteredPokemonList[index].type,
+                                    height: filteredPokemonList[index].height,
+                                    weight: filteredPokemonList[index].weight,
                                   ),
                                 ),
                               );

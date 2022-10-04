@@ -8,8 +8,12 @@ class PokemonModel {
   final String img;
   final String num;
   final List<String> type;
+  final String height;
+  final String weight;
 
   PokemonModel({
+    required this.height,
+    required this.weight,
     required this.name,
     required this.img,
     required this.num,
@@ -22,6 +26,8 @@ class PokemonModel {
       'img': img,
       'num': num,
       'type': type,
+      'height': height,
+      'weight': weight,
     };
   }
 
@@ -31,6 +37,8 @@ class PokemonModel {
       name: map['name'] ?? '',
       img: map['img'] ?? '',
       num: map['num'] ?? '',
+      height: map['height'] ?? '',
+      weight: map['weight'] ?? '',
     );
   }
 
@@ -43,10 +51,7 @@ class PokemonModel {
 
   factory PokemonModel.fromJson(String json) => PokemonModel.fromMap(jsonDecode(json));
 
-  @override
-  String toString() {
-    return 'PokemonModel(name: $name, img: $img, num: $num)';
-  }
+
 
   static Color? _color({required String type}) {
     switch (type) {
@@ -94,7 +99,7 @@ class PokemonModel {
   List<Color> get baseColorDark => _colorDark(types: type);
 
   static List<Color> _colorDark({required List<String> types}) {
-    final List<Color?> list = []; 
+    final List<Color?> list = [];
     for (var type in types) {
       switch (type) {
         case 'Normal':
@@ -162,7 +167,7 @@ class PokemonModel {
             list.add(Colors.lightGreen[900]);
             break;
           }
-          
+
         case 'Rock':
           {
             list.add(Colors.grey[800]);
@@ -203,13 +208,13 @@ class PokemonModel {
           }
       }
     }
-      return list.cast<Color>();
+    return list.cast<Color>();
   }
 
   List<Color> get baseColorLightList => _colorLightList(types: type);
 
   static List<Color> _colorLightList({required List<String> types}) {
-    final List<Color?> list = []; 
+    final List<Color?> list = [];
     for (var type in types) {
       switch (type) {
         case 'Normal':
@@ -277,7 +282,7 @@ class PokemonModel {
             list.add(Colors.lightGreen[500]);
             break;
           }
-          
+
         case 'Rock':
           {
             list.add(Colors.grey);
@@ -318,7 +323,7 @@ class PokemonModel {
           }
       }
     }
-      return list.cast<Color>();
+    return list.cast<Color>();
   }
 
   List<String>? get imageType => _typeImage(types: type);
@@ -425,5 +430,10 @@ class PokemonModel {
       }
     }
     return list;
+  }
+
+  @override
+  String toString() {
+    return 'PokemonModel(name: $name, img: $img, num: $num, type: $type, height: $height, weight: $weight)';
   }
 }
