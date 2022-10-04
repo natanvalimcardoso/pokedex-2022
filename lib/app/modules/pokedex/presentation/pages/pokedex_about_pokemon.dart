@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:pokedex_2022/core/utils/theme/theme_color.dart';
 
 import '../../domain/model/pokemon_model.dart';
 import '../widget/about_pokemon/header_about_pokemon_widget.dart';
@@ -41,27 +43,7 @@ class PokedexAboutPokemonPage extends StatelessWidget {
               },
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
-                children: [
-                  Icon(
-                    Icons.height,
-                    color: pokemon.baseColor,
-                  ),
-                  Text(
-                    'Height: ${pokemon.height}',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-             
-            ],
-          ),
+         
         ],
       ),
     );
