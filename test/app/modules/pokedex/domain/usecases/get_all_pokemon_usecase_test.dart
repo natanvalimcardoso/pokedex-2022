@@ -16,6 +16,10 @@ void main() {
     expect(result[0].type, ['Grass', 'Poison']);
     expect(result[0].height, '0.71 m');
     expect(result[0].weight, '6.9 kg');
+    expect(
+      result[0].weaknesses,
+      ['Fire', 'Ice', 'Flying', 'Psychic'],
+    );
   });
 
   // test('Deve dar erro quando não retornar a lista de pokemon', () async {
@@ -35,6 +39,12 @@ class PokedexRepositoryMock implements PokedexRepository {
         type: ['Grass', 'Poison'],
         height: '0.71 m',
         weight: '6.9 kg',
+        weaknesses: [
+          "Fire",
+          "Ice",
+          "Flying",
+          "Psychic",
+        ],
       ),
     ];
   }

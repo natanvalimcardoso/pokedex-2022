@@ -19,7 +19,7 @@ class TypeContainerWidget extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Container(
       width: size.width * 0.30,
-      height: size.height * 0.1,
+      height: size.height * 0.21,
       padding: EdgeInsets.only(
         top: size.height * 0.02,
       ),

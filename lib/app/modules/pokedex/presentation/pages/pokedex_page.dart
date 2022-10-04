@@ -102,6 +102,7 @@ class _PokedexPageState extends State<PokedexPage> {
                                     type: filteredPokemonList[index].type,
                                     height: filteredPokemonList[index].height,
                                     weight: filteredPokemonList[index].weight,
+                                    weaknesses: filteredPokemonList[index].weaknesses,
                                   ),
                                 ),
                               );
