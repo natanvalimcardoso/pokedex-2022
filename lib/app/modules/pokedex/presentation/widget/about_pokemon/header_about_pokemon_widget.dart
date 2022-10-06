@@ -9,7 +9,7 @@ class HeaderAboutPokemonWidget extends StatelessWidget {
   final String name;
   final String number;
   final Color? color;
-  const HeaderAboutPokemonWidget({
+  HeaderAboutPokemonWidget({
     Key? key,
     required this.image,
     required this.name,
@@ -82,31 +82,13 @@ class HeaderAboutPokemonWidget extends StatelessWidget {
                         SizedBox(
                           height: size.height * 0.05,
                         ),
-                        SizedBox(
-                          width: size.width * 0.9,
+                        Container(
                           height: size.height * 0.25,
-                          child: ListView.builder(
-                            // shrinkWrap: true,
-                            scrollDirection: Axis.horizontal,
-                            itemCount: 1,
-                            itemBuilder: (context, index) {
-                              return Row(
-                                children: [
-                                  Image.network(
-                                    image,
-                                    height: size.height * 0.25,
-                                  ),
-                                  Image.network(
-                                    image,
-                                    height: size.height * 0.25,
-                                  ),
-                                  Image.network(
-                                    image,
-                                    height: size.height * 0.25,
-                                  )
-                                ],
-                              );
-                            },
+                          width: size.width * 0.5,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: NetworkImage(image),
+                            ),
                           ),
                         ),
                       ],
