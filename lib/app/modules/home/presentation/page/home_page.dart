@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:pokedex_2022/app/modules/home/presentation/widgets/button_home_widget.dart';
-import 'package:pokedex_2022/core/consts/route_constants.dart';
+import '../widgets/button_home_widget.dart';
+import '../../../../../core/consts/route_constants.dart';
 
 import '../widgets/text_home_widgets.dart';
 

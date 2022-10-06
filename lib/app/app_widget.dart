@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:pokedex_2022/core/consts/route_constants.dart';
+import '../core/consts/route_constants.dart';
 
 import '../core/utils/theme/ui_config.dart';
 

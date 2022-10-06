@@ -9,7 +9,7 @@ class HeaderAboutPokemonWidget extends StatelessWidget {
   final String name;
   final String number;
   final Color? color;
-  HeaderAboutPokemonWidget({
+  const HeaderAboutPokemonWidget({
     Key? key,
     required this.image,
     required this.name,

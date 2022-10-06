@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:pokedex_2022/app/modules/pokedex/domain/model/pokemon_model.dart';
-import 'package:pokedex_2022/app/modules/pokedex/infra/datasource/pokedex_datasource.dart';
+import '../domain/model/pokemon_model.dart';
+import '../infra/datasource/pokedex_datasource.dart';
 import 'package:http/http.dart' as https;
 
 import '../../../../core/consts/api_pokemon_const.dart';

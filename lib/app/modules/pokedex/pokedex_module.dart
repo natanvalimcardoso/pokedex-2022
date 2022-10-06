@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+
 import '../../../core/consts/route_constants.dart';
 import 'presentation/pages/pokedex_about_pokemon.dart';
 import 'presentation/pages/pokedex_page.dart';

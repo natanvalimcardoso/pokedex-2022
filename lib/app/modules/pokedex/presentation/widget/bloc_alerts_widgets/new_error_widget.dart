@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:lottie/lottie.dart';
-import 'package:pokedex_2022/core/utils/theme/theme_color.dart';
+import '../../../../../../core/utils/theme/theme_color.dart';
 
 class NewErrorWidget extends StatelessWidget {
   final String message;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pokedex_2022/app/modules/pokedex/domain/model/pokemon_model.dart';
+import '../../../domain/model/pokemon_model.dart';
 
 import '../../../../../../core/utils/theme/theme_color.dart';
 

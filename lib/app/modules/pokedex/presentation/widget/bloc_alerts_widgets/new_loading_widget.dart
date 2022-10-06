@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:pokedex_2022/core/utils/theme/theme_color.dart';
+import '../../../../../../core/utils/theme/theme_color.dart';
 
 class NewLoadingWidget extends StatelessWidget {
   const NewLoadingWidget({Key? key}) : super(key: key);

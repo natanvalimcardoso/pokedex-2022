@@ -1,5 +1,5 @@
-import 'package:pokedex_2022/app/modules/pokedex/domain/model/pokemon_model.dart';
-import 'package:pokedex_2022/app/modules/pokedex/infra/datasource/pokedex_datasource.dart';
+import '../../domain/model/pokemon_model.dart';
+import '../datasource/pokedex_datasource.dart';
 
 import '../../domain/repositories/pokedex_repository.dart';
 

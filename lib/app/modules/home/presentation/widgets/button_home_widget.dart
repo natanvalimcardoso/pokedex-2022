@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pokedex_2022/core/utils/theme/theme_color.dart';
+import '../../../../../core/utils/theme/theme_color.dart';
 
 class ButtonHomeWidget extends StatelessWidget {
   final Function() onTap;

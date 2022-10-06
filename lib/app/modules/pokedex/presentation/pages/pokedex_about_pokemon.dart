@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../../core/utils/theme/theme_color.dart';
 import '../../domain/model/pokemon_model.dart';
 import '../widget/about_pokemon/header_about_pokemon_widget.dart';
 import '../widget/about_pokemon/text_with_icon_widget.dart';

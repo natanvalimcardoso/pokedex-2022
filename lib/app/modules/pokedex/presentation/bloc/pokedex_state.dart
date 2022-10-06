@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:pokedex_2022/app/modules/pokedex/domain/model/pokemon_model.dart';
+import '../../domain/model/pokemon_model.dart';
 
 abstract class PokedexState extends Equatable {
   const PokedexState();
