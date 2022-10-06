@@ -2,7 +2,7 @@
 
 O objetivo do projeto era aplicar todos adquirido no serviço e no dia dia através da utilização do **bloc** e do **clean arquiteture** com **modular**, além de consumir api utilizando o **http**, e fazer testes de acordo com o que era recebido.
 
-#### Utilizando a api [PokemonGO-Pokedex](https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json) como api principal do projeto, foi desenvolvido um aplicativo que lista todos os pokemons e suas informações. Além disso, é possível pesquisar por um pokemon específico e ver suas informações detalhadas como peso e altura, fraquezas, tipos e etc, no projeto foram feito estados de Loading, Error e Sucess utilizando o bloc, na parte visual foram utilizado algumas animações com o Lottie.
+#### Utilizando a api [PokemonGO-Pokedex](https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json) como api principal do projeto, foi desenvolvido um aplicativo que lista todos os pokemons e suas informações, além disso é possível pesquisar por um pokemon específico e ver suas informações detalhadas como peso e altura, fraquezas, tipos e etc, no projeto foram feito estados de Loading, Error e Sucess utilizando o bloc, na parte visual foram utilizado algumas animações com o Lottie.
 
 ## 🛠 Tecnologias 🛠
 
@@ -36,7 +36,7 @@ $ flutter run
 
 ## 📝 Licença 📝
 
-Feito com ❤️ por [Natan](https://www.linkedin.com/in/natan-valim-650686208/) 👋🏽 [Entre em contato!](https://www.linkedin.com/in/natan-valim-650686208/)
+Feito com ❤️ por [Natan Valim](https://www.linkedin.com/in/natan-valim-650686208/) 👋🏽 [Entre em contato!](https://www.linkedin.com/in/natan-valim-650686208/)
 
 ## 📷 Screenshots 📷
 
